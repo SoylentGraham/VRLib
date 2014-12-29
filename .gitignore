@@ -1,0 +1,6 @@
+# compiled object files
+obj/
+
+# android generated
+local.properties
+proguard-project.txt
