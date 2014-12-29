@@ -13,10 +13,43 @@ Copyright   :   Copyright 2014 Oculus VR, LLC. All Rights reserved.
 #include "MediaSurface.h"
 #include "Log.h"
 #include "GlStateSave.h"
+#include "../../LibOVR/Src/Kernel/OVR_Types.h"
+#include "../../LibOVR/Src/Kernel/OVR_Timer.h"
 
+
+MediaSurfaceStatsController::MediaSurfaceStatsController() :
+	mBeginCopyTime			( 0.0 ),
+	mBeginSurfaceUpdateTime	( 0.0 )
+{
+	mTextureCopyMs = 0;
+	mSurfaceUpdateMs = 0;
+}
+
+void MediaSurfaceStatsController::BeginCopy()
+{
+	mBeginCopyTime = OVR::Timer::GetTicksMs();
+}
+
+void MediaSurfaceStatsController::EndCopy()
+{
+	OVR::UInt32 Now = OVR::Timer::GetTicksMs();
+	mTextureCopyMs = Now - mBeginCopyTime;
+}
+
+void MediaSurfaceStatsController::BeginSurfaceUpdate()
+{
+	mBeginSurfaceUpdateTime = OVR::Timer::GetTicksMs();
+}
+
+void MediaSurfaceStatsController::EndSurfaceUpdate()
+{
+	OVR::UInt32 Now = OVR::Timer::GetTicksMs();
+	mSurfaceUpdateMs = Now - mBeginSurfaceUpdateTime;
+}
 
 namespace OVR
 {
+
 
 MediaSurface::MediaSurface() :
 	jni( NULL ),
@@ -124,12 +157,17 @@ void MediaSurface::Update()
 		//LOG( "TexId <= 0" );
 		return;
 	}
+	Stats.BeginSurfaceUpdate();
 	AndroidSurfaceTexture->Update();
+	Stats.EndSurfaceUpdate();
 	if ( AndroidSurfaceTexture->timestamp == LastSurfaceTexTimeStamp )
 	{
 		return;
 	}
 	LastSurfaceTexTimeStamp = AndroidSurfaceTexture->timestamp;
+
+	//	gr: note we're ignoring the GLStateSave destructor. make this a scoped timer
+	Stats.BeginCopy();
 
 	// don't mess up Unity state
 	GLStateSave	stateSave;
@@ -163,13 +201,14 @@ void MediaSurface::Update()
 		);
 	}
 
+	
 	// If the SurfaceTexture has changed dimensions, we need to
 	// reallocate the texture and FBO.
 	glActiveTexture( GL_TEXTURE0 );
 	glBindTexture( GL_TEXTURE_EXTERNAL_OES, AndroidSurfaceTexture->textureId );
 	// FIXME: no way to get texture dimensions even in ES 3.0???
-	int	width = 960;
-	int height = 540;
+	int	width = 1920;
+	int height = 640;
 	if ( width != TexIdWidth || height != TexIdHeight )
 	{
 		LOG( "New surface size: %ix%i", width, height );
@@ -200,6 +239,7 @@ void MediaSurface::Update()
 				TexId, 0 );
 		glBindFramebuffer( GL_FRAMEBUFFER, 0 );
 	}
+	
 
 	glBindFramebuffer( GL_FRAMEBUFFER, Fbo );
 	glDisable( GL_DEPTH_TEST );
@@ -221,6 +261,8 @@ void MediaSurface::Update()
 	glBindTexture( GL_TEXTURE_2D, TexId );
 	glGenerateMipmap( GL_TEXTURE_2D );
 	glBindTexture( GL_TEXTURE_2D, 0 );
+	
+	Stats.EndCopy();
 }
 
 }	// namespace OVR

@@ -18,6 +18,28 @@ Copyright   :   Copyright 2014 Oculus VR, LLC. All Rights reserved.
 #include "SurfaceTexture.h"
 #include "GlUtils.h"
 
+
+struct MediaSurfaceStats
+{
+	int		mTextureCopyMs;				//	opengl copy time
+	int		mSurfaceUpdateMs;		//	time between each frame notification
+};
+
+class MediaSurfaceStatsController : public MediaSurfaceStats
+{
+public:
+	MediaSurfaceStatsController();
+	
+	void		BeginCopy();
+	void		EndCopy();
+	void		BeginSurfaceUpdate();
+	void		EndSurfaceUpdate();
+	
+private:
+	int		mBeginCopyTime;
+	int		mBeginSurfaceUpdateTime;
+};
+
 namespace OVR {
 
 class MediaSurface
@@ -46,6 +68,7 @@ public:
 	int				TexIdWidth;
 	int				TexIdHeight;
 	GLuint			Fbo;
+	MediaSurfaceStatsController	Stats;
 };
 
 }	// namespace OVR

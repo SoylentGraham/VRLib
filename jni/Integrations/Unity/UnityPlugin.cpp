@@ -981,6 +981,11 @@ OCULUS_EXPORT int OVR_GetExternalHMTMountState()
 	ovr_ResetExternalHMTMountState();
 	return ms;
 }
+	
+OCULUS_EXPORT void OVR_MediaSurfaceStats(MediaSurfaceStats* Stats)
+{
+	*Stats = up.VideoSurface.Stats;
+}
 
 }	// extern "C"
 
