@@ -4,3 +4,7 @@ obj/
 # android generated
 local.properties
 proguard-project.txt
+
+# xcode user files
+xcuserdata/
+*.xccheckout
