@@ -18,11 +18,13 @@ Copyright   :   Copyright 2014 Oculus VR, LLC. All Rights reserved.
 
 
 MediaSurfaceStatsController::MediaSurfaceStatsController() :
-	mBeginCopyTime			( 0.0 ),
-	mBeginSurfaceUpdateTime	( 0.0 )
+	mBeginCopyTime			( 0 ),
+	mBeginSurfaceUpdateTime	( 0 ),
+	mLastTimestampTime		( 0 )
 {
 	mTextureCopyMs = 0;
 	mSurfaceUpdateMs = 0;
+	mTimestampStepMs = 0;
 }
 
 void MediaSurfaceStatsController::BeginCopy()
@@ -45,6 +47,14 @@ void MediaSurfaceStatsController::EndSurfaceUpdate()
 {
 	OVR::UInt32 Now = OVR::Timer::GetTicksMs();
 	mSurfaceUpdateMs = Now - mBeginSurfaceUpdateTime;
+}
+
+void MediaSurfaceStatsController::OnNewTimestamp()
+{
+	OVR::UInt32 Now = OVR::Timer::GetTicksMs();
+	if ( mLastTimestampTime != 0 )
+		mTimestampStepMs = Now - mLastTimestampTime;
+	mLastTimestampTime = Now;
 }
 
 namespace OVR
@@ -166,6 +176,7 @@ void MediaSurface::Update()
 	{
 		return;
 	}
+	Stats.OnNewTimestamp();
 	LastSurfaceTexTimeStamp = AndroidSurfaceTexture->timestamp;
 
 	//	gr: note we're ignoring the GLStateSave destructor. make this a scoped timer

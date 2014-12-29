@@ -21,8 +21,9 @@ Copyright   :   Copyright 2014 Oculus VR, LLC. All Rights reserved.
 
 struct MediaSurfaceStats
 {
-	int		mTextureCopyMs;				//	opengl copy time
+	int		mTextureCopyMs;			//	opengl copy time
 	int		mSurfaceUpdateMs;		//	time between each frame notification
+	int		mTimestampStepMs;		//	time since last new frame, should measure video fps
 };
 
 class MediaSurfaceStatsController : public MediaSurfaceStats
@@ -34,10 +35,12 @@ public:
 	void		EndCopy();
 	void		BeginSurfaceUpdate();
 	void		EndSurfaceUpdate();
+	void		OnNewTimestamp();
 	
 private:
 	int		mBeginCopyTime;
 	int		mBeginSurfaceUpdateTime;
+	int		mLastTimestampTime;			//	when did we last get a timestamp
 };
 
 namespace OVR {
