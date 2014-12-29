@@ -57,6 +57,9 @@ public:
 
 	// Must be called with a current OpenGL context
 	void			Update();
+	
+	//	gr; function in case we need to make this threadsafe later
+	void			SetTargetSize(int Width,int Height);
 
 	JNIEnv * 		jni;
 	SurfaceTexture	* AndroidSurfaceTexture;
@@ -69,6 +72,10 @@ public:
 	int				TexIdHeight;
 	GLuint			Fbo;
 	MediaSurfaceStatsController	Stats;
+	
+	//	change these at runtime to change fbo/texture dimensions
+	int				TargetTextureWidth;
+	int				TargetTextureHeight;
 };
 
 }	// namespace OVR

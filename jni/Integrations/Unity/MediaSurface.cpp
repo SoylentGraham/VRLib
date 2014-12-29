@@ -59,7 +59,9 @@ MediaSurface::MediaSurface() :
 	TexId( 0 ),
 	TexIdWidth( 0 ),
 	TexIdHeight( 0 ),
-	Fbo( 0 )
+	Fbo( 0 ),
+	TargetTextureWidth( 1920 ),
+	TargetTextureHeight( 640 )
 {
 }
 
@@ -207,8 +209,8 @@ void MediaSurface::Update()
 	glActiveTexture( GL_TEXTURE0 );
 	glBindTexture( GL_TEXTURE_EXTERNAL_OES, AndroidSurfaceTexture->textureId );
 	// FIXME: no way to get texture dimensions even in ES 3.0???
-	int	width = 1920;
-	int height = 640;
+	int width = TargetTextureWidth;
+	int height = TargetTextureHeight;
 	if ( width != TexIdWidth || height != TexIdHeight )
 	{
 		LOG( "New surface size: %ix%i", width, height );
@@ -264,6 +266,20 @@ void MediaSurface::Update()
 	
 	Stats.EndCopy();
 }
+	
+template<typename T>
+inline const T& Max(const T& a,const T& b)
+{
+	return a > b ? a : b;
+}
+
+void MediaSurface::SetTargetSize(int Width,int Height)
+{
+	//	gr: find device max dimensions, restrict to powers?
+	TargetTextureWidth = Max( 1, Width );
+	TargetTextureHeight = Max( 1, Height );
+}
+
 
 }	// namespace OVR
 

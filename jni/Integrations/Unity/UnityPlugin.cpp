@@ -987,5 +987,10 @@ OCULUS_EXPORT void OVR_MediaSurfaceStats(MediaSurfaceStats* Stats)
 	*Stats = up.VideoSurface.Stats;
 }
 
+OCULUS_EXPORT void OVR_SetMediaSurfaceTextureSize(int Width,int Height)
+{
+	up.VideoSurface.SetTargetSize( Width, Height );
+}
+
 }	// extern "C"
 
