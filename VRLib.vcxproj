@@ -1,0 +1,374 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{8ED62838-3668-4CDC-BF20-F14F53CE9362}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <NMakeBuildCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /build "$(ProjectPath)" "/solution:$(SolutionPath)" "/config:$(Configuration)" "/platform:$(Platform)"</NMakeBuildCommandLine>
+    <NMakeCleanCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /clean "$(ProjectPath)" "/solution:$(SolutionPath)" "/config:$(Configuration)" "/platform:$(Platform)"</NMakeCleanCommandLine>
+    <NMakeReBuildCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /rebuild "$(ProjectPath)" "/solution:$(SolutionPath)" "/config:$(Configuration)" "/platform:$(Platform)"</NMakeReBuildCommandLine>
+    <NMakeIncludeSearchPath>$(ANDROID_NDK)\platforms\android-18\arch-arm\usr\include;$(ANDROID_NDK)\toolchains\arm-linux-androideabi-4.6\prebuilt\windows-x86_64\lib\gcc\arm-linux-androideabi\4.6\include;$(ANDROID_NDK_HOME)\toolchains\arm-linux-androideabi-4.6\prebuilt\windows-x86_64\lib\gcc\arm-linux-androideabi\4.6\include-fixed;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+    <NMakeForcedIncludes>$(ProjectDir)\gcc_Debug.h;$(VISUALGDB_DIR)\gcc_compat.h;$(NMakeForcedIncludes)</NMakeForcedIncludes>
+    <IncludePath>O:\dev\android\android-ndk-r9d\platforms\android-18\arch-arm\usr\include;$(IncludePath)</IncludePath>
+    <ReferencePath />
+    <LibraryPath />
+    <NMakeOutput>$(ProjectDir)VRLib-Debug.vgdbsettings</NMakeOutput>
+    <NMakePreprocessorDefinitions>__VisualGDB_CFG_Debug;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <NMakeBuildCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /build "$(ProjectPath)" "/solution:$(SolutionPath)" "/config:$(Configuration)" "/platform:$(Platform)"</NMakeBuildCommandLine>
+    <NMakeCleanCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /clean "$(ProjectPath)" "/solution:$(SolutionPath)" "/config:$(Configuration)" "/platform:$(Platform)"</NMakeCleanCommandLine>
+    <NMakeReBuildCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /rebuild "$(ProjectPath)" "/solution:$(SolutionPath)" "/config:$(Configuration)" "/platform:$(Platform)"</NMakeReBuildCommandLine>
+    <NMakeIncludeSearchPath>O:\dev\android\android-ndk-r9d\platforms\android-18\arch-arm\usr\include;O:\dev\android\android-ndk-r9d\toolchains\arm-linux-androideabi-4.6\prebuilt\windows-x86_64\lib\gcc\arm-linux-androideabi\4.6\include;O:\dev\android\android-ndk-r9d\toolchains\arm-linux-androideabi-4.6\prebuilt\windows-x86_64\lib\gcc\arm-linux-androideabi\4.6\include-fixed;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+    <NMakeForcedIncludes>$(ProjectDir)\gcc_Release.h;$(VISUALGDB_DIR)\gcc_compat.h;$(NMakeForcedIncludes)</NMakeForcedIncludes>
+    <IncludePath />
+    <ReferencePath />
+    <LibraryPath />
+    <NMakeOutput>$(ProjectDir)VRLib-Release.vgdbsettings</NMakeOutput>
+    <NMakePreprocessorDefinitions>__VisualGDB_CFG_Release;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Xml Include="AndroidManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="jni\3rdParty\minizip\configure.ac" />
+    <None Include="jni\3rdParty\minizip\Makefile" />
+    <None Include="jni\3rdParty\minizip\Makefile.am" />
+    <None Include="jni\3rdParty\minizip\make_vms.com" />
+    <None Include="jni\3rdParty\minizip\minizip.pc.in" />
+    <None Include="jni\Android.mk" />
+    <None Include="jni\Application.mk" />
+    <None Include="src\android\app\IVRManager.java" />
+    <None Include="src\com\oculusvr\vrlib\DockReceiver.java" />
+    <None Include="src\com\oculusvr\vrlib\FlatActivity.java" />
+    <None Include="src\com\oculusvr\vrlib\JoyEvent.java" />
+    <None Include="src\com\oculusvr\vrlib\PassThroughCamera.java" />
+    <None Include="src\com\oculusvr\vrlib\PlatformActivity.java" />
+    <None Include="src\com\oculusvr\vrlib\ProximityReceiver.java" />
+    <None Include="src\com\oculusvr\vrlib\util\LayoutEnumerator.java" />
+    <None Include="src\com\oculusvr\vrlib\util\ViewFinder.java" />
+    <None Include="src\com\oculusvr\vrlib\util\VRTouchPadGestureDetector.java" />
+    <None Include="src\com\oculusvr\vrlib\VrActivity.java" />
+    <None Include="src\com\oculusvr\vrlib\VrApplication.java" />
+    <None Include="src\com\oculusvr\vrlib\VrLib.java" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="jni\3rdParty\minizip\ioapi.c" />
+    <ClCompile Include="jni\3rdParty\minizip\iowin32.c" />
+    <ClCompile Include="jni\3rdParty\minizip\miniunz.c" />
+    <ClCompile Include="jni\3rdParty\minizip\minizip.c" />
+    <ClCompile Include="jni\3rdParty\minizip\mztools.c" />
+    <ClCompile Include="jni\3rdParty\minizip\unzip.c" />
+    <ClCompile Include="jni\3rdParty\minizip\zip.c" />
+    <ClCompile Include="jni\3rdParty\stb\stb_image.c" />
+    <ClCompile Include="jni\3rdParty\stb\stb_image_write.c" />
+    <ClCompile Include="jni\App.cpp" />
+    <ClCompile Include="jni\AppRender.cpp" />
+    <ClCompile Include="jni\BitmapFont.cpp" />
+    <ClCompile Include="jni\DebugLines.cpp" />
+    <ClCompile Include="jni\EyeBuffers.cpp" />
+    <ClCompile Include="jni\EyePostRender.cpp" />
+    <ClCompile Include="jni\GazeCursor.cpp" />
+    <ClCompile Include="jni\GlGeometry.cpp" />
+    <ClCompile Include="jni\GlProgram.cpp" />
+    <ClCompile Include="jni\GlTexture.cpp" />
+    <ClCompile Include="jni\GlUtils.cpp" />
+    <ClCompile Include="jni\ImageData.cpp" />
+    <ClCompile Include="jni\Integrations\PureJava\PureJava.cpp" />
+    <ClCompile Include="jni\Integrations\Unity\MediaSurface.cpp" />
+    <ClCompile Include="jni\Integrations\Unity\RenderingPlugin.cpp" />
+    <ClCompile Include="jni\Integrations\Unity\SensorPlugin.cpp" />
+    <ClCompile Include="jni\Integrations\Unity\UnityPlugin.cpp" />
+    <ClCompile Include="jni\KeyState.cpp" />
+    <ClCompile Include="jni\LibOVR\Src\CAPI\CAPI_GlobalState.cpp" />
+    <ClCompile Include="jni\LibOVR\Src\CAPI\CAPI_HMDState.cpp" />
+    <ClCompile Include="jni\LibOVR\Src\Kernel\OVR_Alg.cpp" />
+    <ClCompile Include="jni\LibOVR\Src\Kernel\OVR_Allocator.cpp" />
+    <ClCompile Include="jni\LibOVR\Src\Kernel\OVR_Atomic.cpp" />
+    <ClCompile Include="jni\LibOVR\Src\Kernel\OVR_File.cpp" />
+    <ClCompile Include="jni\LibOVR\Src\Kernel\OVR_FileFILE.cpp" />
+    <ClCompile Include="jni\LibOVR\Src\Kernel\OVR_Lockless.cpp" />
+    <ClCompile Include="jni\LibOVR\Src\Kernel\OVR_Log.cpp" />
+    <ClCompile Include="jni\LibOVR\Src\Kernel\OVR_Math.cpp" />
+    <ClCompile Include="jni\LibOVR\Src\Kernel\OVR_RefCount.cpp" />
+    <ClCompile Include="jni\LibOVR\Src\Kernel\OVR_Std.cpp" />
+    <ClCompile Include="jni\LibOVR\Src\Kernel\OVR_String.cpp" />
+    <ClCompile Include="jni\LibOVR\Src\Kernel\OVR_String_FormatUtil.cpp" />
+    <ClCompile Include="jni\LibOVR\Src\Kernel\OVR_String_PathUtil.cpp" />
+    <ClCompile Include="jni\LibOVR\Src\Kernel\OVR_SysFile.cpp" />
+    <ClCompile Include="jni\LibOVR\Src\Kernel\OVR_System.cpp" />
+    <ClCompile Include="jni\LibOVR\Src\Kernel\OVR_ThreadsPthread.cpp" />
+    <ClCompile Include="jni\LibOVR\Src\Kernel\OVR_ThreadsWinAPI.cpp" />
+    <ClCompile Include="jni\LibOVR\Src\Kernel\OVR_Timer.cpp" />
+    <ClCompile Include="jni\LibOVR\Src\Kernel\OVR_TypesafeNumber.cpp" />
+    <ClCompile Include="jni\LibOVR\Src\Kernel\OVR_UTF8Util.cpp" />
+    <ClCompile Include="jni\LibOVR\Src\OVR_Android_DeviceManager.cpp" />
+    <ClCompile Include="jni\LibOVR\Src\OVR_Android_HIDDevice.cpp" />
+    <ClCompile Include="jni\LibOVR\Src\OVR_Android_HMDDevice.cpp" />
+    <ClCompile Include="jni\LibOVR\Src\OVR_Android_PhoneSensors.cpp" />
+    <ClCompile Include="jni\LibOVR\Src\OVR_Android_SensorDevice.cpp" />
+    <ClCompile Include="jni\LibOVR\Src\OVR_BinaryFile.cpp" />
+    <ClCompile Include="jni\LibOVR\Src\OVR_CAPI.cpp" />
+    <ClCompile Include="jni\LibOVR\Src\OVR_Common_HMDDevice.cpp" />
+    <ClCompile Include="jni\LibOVR\Src\OVR_DeviceHandle.cpp" />
+    <ClCompile Include="jni\LibOVR\Src\OVR_DeviceImpl.cpp" />
+    <ClCompile Include="jni\LibOVR\Src\OVR_GyroTempCalibration.cpp" />
+    <ClCompile Include="jni\LibOVR\Src\OVR_JSON.cpp" />
+    <ClCompile Include="jni\LibOVR\Src\OVR_LatencyTestImpl.cpp" />
+    <ClCompile Include="jni\LibOVR\Src\OVR_Linux_DeviceManager.cpp" />
+    <ClCompile Include="jni\LibOVR\Src\OVR_Linux_HIDDevice.cpp" />
+    <ClCompile Include="jni\LibOVR\Src\OVR_Linux_HMDDevice.cpp" />
+    <ClCompile Include="jni\LibOVR\Src\OVR_Linux_SensorDevice.cpp" />
+    <ClCompile Include="jni\LibOVR\Src\OVR_MappedFile.cpp" />
+    <ClCompile Include="jni\LibOVR\Src\OVR_OSX_DeviceManager.cpp" />
+    <ClCompile Include="jni\LibOVR\Src\OVR_OSX_HIDDevice.cpp" />
+    <ClCompile Include="jni\LibOVR\Src\OVR_OSX_HMDDevice.cpp" />
+    <ClCompile Include="jni\LibOVR\Src\OVR_OSX_SensorDevice.cpp" />
+    <ClCompile Include="jni\LibOVR\Src\OVR_Profile.cpp" />
+    <ClCompile Include="jni\LibOVR\Src\OVR_SensorCalibration.cpp" />
+    <ClCompile Include="jni\LibOVR\Src\OVR_SensorFilter.cpp" />
+    <ClCompile Include="jni\LibOVR\Src\OVR_SensorFusion.cpp" />
+    <ClCompile Include="jni\LibOVR\Src\OVR_SensorImpl.cpp" />
+    <ClCompile Include="jni\LibOVR\Src\OVR_SensorTimeFilter.cpp" />
+    <ClCompile Include="jni\LibOVR\Src\OVR_Stereo.cpp" />
+    <ClCompile Include="jni\LibOVR\Src\OVR_ThreadCommandQueue.cpp" />
+    <ClCompile Include="jni\LibOVR\Src\OVR_Win32_DeviceManager.cpp" />
+    <ClCompile Include="jni\LibOVR\Src\OVR_Win32_DeviceStatus.cpp" />
+    <ClCompile Include="jni\LibOVR\Src\OVR_Win32_HIDDevice.cpp" />
+    <ClCompile Include="jni\LibOVR\Src\OVR_Win32_HMDDevice.cpp" />
+    <ClCompile Include="jni\LibOVR\Src\OVR_Win32_SensorDevice.cpp" />
+    <ClCompile Include="jni\LibOVR\Src\Util\Util_LatencyTest.cpp" />
+    <ClCompile Include="jni\Log.cpp" />
+    <ClCompile Include="jni\MemBuffer.cpp" />
+    <ClCompile Include="jni\MessageQueue.cpp" />
+    <ClCompile Include="jni\ModelCollision.cpp" />
+    <ClCompile Include="jni\ModelFile.cpp" />
+    <ClCompile Include="jni\ModelRender.cpp" />
+    <ClCompile Include="jni\ModelView.cpp" />
+    <ClCompile Include="jni\PackageFiles.cpp" />
+    <ClCompile Include="jni\PlatformActivity.cpp" />
+    <ClCompile Include="jni\RayTracer\RtIntersect.cpp" />
+    <ClCompile Include="jni\RayTracer\RtTrace.cpp" />
+    <ClCompile Include="jni\SearchPaths.cpp" />
+    <ClCompile Include="jni\SoundManager.cpp" />
+    <ClCompile Include="jni\SurfaceTexture.cpp" />
+    <ClCompile Include="jni\SwipeDir.cpp" />
+    <ClCompile Include="jni\SwipeView.cpp" />
+    <ClCompile Include="jni\TalkToJava.cpp" />
+    <ClCompile Include="jni\VrApi\DirectRender.cpp" />
+    <ClCompile Include="jni\VrApi\HmdInfo.cpp" />
+    <ClCompile Include="jni\VrApi\ImageServer.cpp" />
+    <ClCompile Include="jni\VrApi\LocalPreferences.cpp" />
+    <ClCompile Include="jni\VrApi\NativeBuildStrings.cpp" />
+    <ClCompile Include="jni\VrApi\TimeWarp.cpp" />
+    <ClCompile Include="jni\VrApi\VrApi.cpp" />
+    <ClCompile Include="jni\VrApi\Vsync.cpp" />
+    <ClCompile Include="jni\VrCommon.cpp" />
+    <ClCompile Include="jni\VRMenu\ActionComponents.cpp" />
+    <ClCompile Include="jni\VRMenu\AnimComponents.cpp" />
+    <ClCompile Include="jni\VRMenu\CollisionPrimitive.cpp" />
+    <ClCompile Include="jni\VRMenu\DefaultComponent.cpp" />
+    <ClCompile Include="jni\VRMenu\Fader.cpp" />
+    <ClCompile Include="jni\VRMenu\FolderBrowser.cpp" />
+    <ClCompile Include="jni\VRMenu\GlobalMenu.cpp" />
+    <ClCompile Include="jni\VRMenu\GuiSys.cpp" />
+    <ClCompile Include="jni\VRMenu\SliderComponent.cpp" />
+    <ClCompile Include="jni\VRMenu\SoundLimiter.cpp" />
+    <ClCompile Include="jni\VRMenu\TextFade_Component.cpp" />
+    <ClCompile Include="jni\VRMenu\VolumePopup.cpp" />
+    <ClCompile Include="jni\VRMenu\VRMenu.cpp" />
+    <ClCompile Include="jni\VRMenu\VRMenuComponent.cpp" />
+    <ClCompile Include="jni\VRMenu\VRMenuEvent.cpp" />
+    <ClCompile Include="jni\VRMenu\VRMenuEventHandler.cpp" />
+    <ClCompile Include="jni\VRMenu\VRMenuMgr.cpp" />
+    <ClCompile Include="jni\VRMenu\VRMenuObjectLocal.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="jni\3rdParty\minizip\MiniZip64_Changes.txt" />
+    <Text Include="jni\3rdParty\minizip\MiniZip64_info.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="jni\3rdParty\minizip\crypt.h" />
+    <ClInclude Include="jni\3rdParty\minizip\ioapi.h" />
+    <ClInclude Include="jni\3rdParty\minizip\iowin32.h" />
+    <ClInclude Include="jni\3rdParty\minizip\mztools.h" />
+    <ClInclude Include="jni\3rdParty\minizip\unzip.h" />
+    <ClInclude Include="jni\3rdParty\minizip\zip.h" />
+    <ClInclude Include="jni\3rdParty\stb\stb_image.h" />
+    <ClInclude Include="jni\3rdParty\stb\stb_image_write.h" />
+    <ClInclude Include="jni\App.h" />
+    <ClInclude Include="jni\AppLocal.h" />
+    <ClInclude Include="jni\BitmapFont.h" />
+    <ClInclude Include="jni\DebugLines.h" />
+    <ClInclude Include="jni\embedded\oculus_jpg.h" />
+    <ClInclude Include="jni\EyeBuffers.h" />
+    <ClInclude Include="jni\EyePostRender.h" />
+    <ClInclude Include="jni\GazeCursor.h" />
+    <ClInclude Include="jni\GazeCursorLocal.h" />
+    <ClInclude Include="jni\GlGeometry.h" />
+    <ClInclude Include="jni\GlProgram.h" />
+    <ClInclude Include="jni\GlTexture.h" />
+    <ClInclude Include="jni\GlUtils.h" />
+    <ClInclude Include="jni\ImageData.h" />
+    <ClInclude Include="jni\Input.h" />
+    <ClInclude Include="jni\Integrations\JavaVM.h" />
+    <ClInclude Include="jni\Integrations\Unity\GlStateSave.h" />
+    <ClInclude Include="jni\Integrations\Unity\MediaSurface.h" />
+    <ClInclude Include="jni\KeyState.h" />
+    <ClInclude Include="jni\LibOVR\Include\OVR.h" />
+    <ClInclude Include="jni\LibOVR\Include\OVRVersion.h" />
+    <ClInclude Include="jni\LibOVR\Src\CAPI\CAPI_GlobalState.h" />
+    <ClInclude Include="jni\LibOVR\Src\CAPI\CAPI_HMDState.h" />
+    <ClInclude Include="jni\LibOVR\Src\Kernel\OVR_Alg.h" />
+    <ClInclude Include="jni\LibOVR\Src\Kernel\OVR_Allocator.h" />
+    <ClInclude Include="jni\LibOVR\Src\Kernel\OVR_Array.h" />
+    <ClInclude Include="jni\LibOVR\Src\Kernel\OVR_Atomic.h" />
+    <ClInclude Include="jni\LibOVR\Src\Kernel\OVR_BitFlags.h" />
+    <ClInclude Include="jni\LibOVR\Src\Kernel\OVR_Color.h" />
+    <ClInclude Include="jni\LibOVR\Src\Kernel\OVR_ContainerAllocator.h" />
+    <ClInclude Include="jni\LibOVR\Src\Kernel\OVR_Deque.h" />
+    <ClInclude Include="jni\LibOVR\Src\Kernel\OVR_File.h" />
+    <ClInclude Include="jni\LibOVR\Src\Kernel\OVR_Hash.h" />
+    <ClInclude Include="jni\LibOVR\Src\Kernel\OVR_KeyCodes.h" />
+    <ClInclude Include="jni\LibOVR\Src\Kernel\OVR_List.h" />
+    <ClInclude Include="jni\LibOVR\Src\Kernel\OVR_Lockless.h" />
+    <ClInclude Include="jni\LibOVR\Src\Kernel\OVR_Log.h" />
+    <ClInclude Include="jni\LibOVR\Src\Kernel\OVR_Math.h" />
+    <ClInclude Include="jni\LibOVR\Src\Kernel\OVR_RefCount.h" />
+    <ClInclude Include="jni\LibOVR\Src\Kernel\OVR_Std.h" />
+    <ClInclude Include="jni\LibOVR\Src\Kernel\OVR_String.h" />
+    <ClInclude Include="jni\LibOVR\Src\Kernel\OVR_StringHash.h" />
+    <ClInclude Include="jni\LibOVR\Src\Kernel\OVR_String_Utils.h" />
+    <ClInclude Include="jni\LibOVR\Src\Kernel\OVR_SysFile.h" />
+    <ClInclude Include="jni\LibOVR\Src\Kernel\OVR_System.h" />
+    <ClInclude Include="jni\LibOVR\Src\Kernel\OVR_Threads.h" />
+    <ClInclude Include="jni\LibOVR\Src\Kernel\OVR_Timer.h" />
+    <ClInclude Include="jni\LibOVR\Src\Kernel\OVR_Types.h" />
+    <ClInclude Include="jni\LibOVR\Src\Kernel\OVR_TypesafeNumber.h" />
+    <ClInclude Include="jni\LibOVR\Src\Kernel\OVR_UTF8Util.h" />
+    <ClInclude Include="jni\LibOVR\Src\OVR_Android_DeviceManager.h" />
+    <ClInclude Include="jni\LibOVR\Src\OVR_Android_HIDDevice.h" />
+    <ClInclude Include="jni\LibOVR\Src\OVR_Android_HMDDevice.h" />
+    <ClInclude Include="jni\LibOVR\Src\OVR_Android_PhoneSensors.h" />
+    <ClInclude Include="jni\LibOVR\Src\OVR_BinaryFile.h" />
+    <ClInclude Include="jni\LibOVR\Src\OVR_CAPI.h" />
+    <ClInclude Include="jni\LibOVR\Src\OVR_Device.h" />
+    <ClInclude Include="jni\LibOVR\Src\OVR_DeviceConstants.h" />
+    <ClInclude Include="jni\LibOVR\Src\OVR_DeviceHandle.h" />
+    <ClInclude Include="jni\LibOVR\Src\OVR_DeviceImpl.h" />
+    <ClInclude Include="jni\LibOVR\Src\OVR_DeviceMessages.h" />
+    <ClInclude Include="jni\LibOVR\Src\OVR_GyroTempCalibration.h" />
+    <ClInclude Include="jni\LibOVR\Src\OVR_HIDDevice.h" />
+    <ClInclude Include="jni\LibOVR\Src\OVR_HIDDeviceBase.h" />
+    <ClInclude Include="jni\LibOVR\Src\OVR_HIDDeviceImpl.h" />
+    <ClInclude Include="jni\LibOVR\Src\OVR_JSON.h" />
+    <ClInclude Include="jni\LibOVR\Src\OVR_LatencyTestImpl.h" />
+    <ClInclude Include="jni\LibOVR\Src\OVR_Linux_DeviceManager.h" />
+    <ClInclude Include="jni\LibOVR\Src\OVR_Linux_HIDDevice.h" />
+    <ClInclude Include="jni\LibOVR\Src\OVR_Linux_HMDDevice.h" />
+    <ClInclude Include="jni\LibOVR\Src\OVR_MappedFile.h" />
+    <ClInclude Include="jni\LibOVR\Src\OVR_OSX_DeviceManager.h" />
+    <ClInclude Include="jni\LibOVR\Src\OVR_OSX_HIDDevice.h" />
+    <ClInclude Include="jni\LibOVR\Src\OVR_OSX_HMDDevice.h" />
+    <ClInclude Include="jni\LibOVR\Src\OVR_PhoneSensors.h" />
+    <ClInclude Include="jni\LibOVR\Src\OVR_Profile.h" />
+    <ClInclude Include="jni\LibOVR\Src\OVR_SensorCalibration.h" />
+    <ClInclude Include="jni\LibOVR\Src\OVR_SensorFilter.h" />
+    <ClInclude Include="jni\LibOVR\Src\OVR_SensorFusion.h" />
+    <ClInclude Include="jni\LibOVR\Src\OVR_SensorImpl.h" />
+    <ClInclude Include="jni\LibOVR\Src\OVR_SensorTimeFilter.h" />
+    <ClInclude Include="jni\LibOVR\Src\OVR_Stereo.h" />
+    <ClInclude Include="jni\LibOVR\Src\OVR_ThreadCommandQueue.h" />
+    <ClInclude Include="jni\LibOVR\Src\OVR_Win32_DeviceManager.h" />
+    <ClInclude Include="jni\LibOVR\Src\OVR_Win32_DeviceStatus.h" />
+    <ClInclude Include="jni\LibOVR\Src\OVR_Win32_HIDDevice.h" />
+    <ClInclude Include="jni\LibOVR\Src\OVR_Win32_HMDDevice.h" />
+    <ClInclude Include="jni\LibOVR\Src\OVR_Win32_SensorDevice.h" />
+    <ClInclude Include="jni\LibOVR\Src\Util\Util_LatencyTest.h" />
+    <ClInclude Include="jni\Log.h" />
+    <ClInclude Include="jni\MemBuffer.h" />
+    <ClInclude Include="jni\MessageQueue.h" />
+    <ClInclude Include="jni\ModelCollision.h" />
+    <ClInclude Include="jni\ModelFile.h" />
+    <ClInclude Include="jni\ModelRender.h" />
+    <ClInclude Include="jni\ModelView.h" />
+    <ClInclude Include="jni\PackageFiles.h" />
+    <ClInclude Include="jni\RayTracer\RtIntersect.h" />
+    <ClInclude Include="jni\RayTracer\RtTrace.h" />
+    <ClInclude Include="jni\SearchPaths.h" />
+    <ClInclude Include="jni\SoundManager.h" />
+    <ClInclude Include="jni\SurfaceTexture.h" />
+    <ClInclude Include="jni\SwipeDir.h" />
+    <ClInclude Include="jni\SwipeView.h" />
+    <ClInclude Include="jni\TalkToJava.h" />
+    <ClInclude Include="jni\VrApi\DirectRender.h" />
+    <ClInclude Include="jni\VrApi\HmdInfo.h" />
+    <ClInclude Include="jni\VrApi\ImageServer.h" />
+    <ClInclude Include="jni\VrApi\LocalPreferences.h" />
+    <ClInclude Include="jni\VrApi\NativeBuildStrings.h" />
+    <ClInclude Include="jni\VrApi\TimeWarp.h" />
+    <ClInclude Include="jni\VrApi\TimeWarpLocal.h" />
+    <ClInclude Include="jni\VrApi\TimeWarpParms.h" />
+    <ClInclude Include="jni\VrApi\VrApi.h" />
+    <ClInclude Include="jni\VrApi\VrApi_local.h" />
+    <ClInclude Include="jni\VrApi\Vsync.h" />
+    <ClInclude Include="jni\VrCommon.h" />
+    <ClInclude Include="jni\VRMenu\ActionComponents.h" />
+    <ClInclude Include="jni\VRMenu\AnimComponents.h" />
+    <ClInclude Include="jni\VRMenu\CollisionPrimitive.h" />
+    <ClInclude Include="jni\VRMenu\DefaultComponent.h" />
+    <ClInclude Include="jni\VRMenu\Fader.h" />
+    <ClInclude Include="jni\VRMenu\FolderBrowser.h" />
+    <ClInclude Include="jni\VRMenu\GlobalMenu.h" />
+    <ClInclude Include="jni\VRMenu\GuiSys.h" />
+    <ClInclude Include="jni\VRMenu\GuiSysLocal.h" />
+    <ClInclude Include="jni\VRMenu\SliderComponent.h" />
+    <ClInclude Include="jni\VRMenu\SoundLimiter.h" />
+    <ClInclude Include="jni\VRMenu\TextFade_Component.h" />
+    <ClInclude Include="jni\VRMenu\ui_default.h" />
+    <ClInclude Include="jni\VRMenu\VolumePopup.h" />
+    <ClInclude Include="jni\VRMenu\VRMenu.h" />
+    <ClInclude Include="jni\VRMenu\VRMenuComponent.h" />
+    <ClInclude Include="jni\VRMenu\VRMenuEvent.h" />
+    <ClInclude Include="jni\VRMenu\VRMenuEventHandler.h" />
+    <ClInclude Include="jni\VRMenu\VRMenuMgr.h" />
+    <ClInclude Include="jni\VRMenu\VRMenuObject.h" />
+    <ClInclude Include="jni\VRMenu\VRMenuObjectLocal.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

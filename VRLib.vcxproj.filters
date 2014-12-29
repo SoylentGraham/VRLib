@@ -1,0 +1,981 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source files">
+      <UniqueIdentifier>{7cb474d4-c577-4704-821e-c8ac01d81dbb}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source files\3rdParty">
+      <UniqueIdentifier>{1b2a1031-d032-4dea-9f92-4439a42a3e07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\3rdParty\minizip">
+      <UniqueIdentifier>{ea7becec-e5d6-4d88-9ce6-563bba831936}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\3rdParty\stb">
+      <UniqueIdentifier>{d5e60f7a-51d1-4369-8596-b138a07e4a34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\3rdParty\TinyXml">
+      <UniqueIdentifier>{c07fee4d-f021-4ab4-85e4-7fb3ee5fab2b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\embedded">
+      <UniqueIdentifier>{a11f2ed6-2c18-4015-ac4d-f424ee9f1bc2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\FastCV">
+      <UniqueIdentifier>{8c434695-8731-4c19-853e-3529e68f9cbd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\Integrations">
+      <UniqueIdentifier>{9db93e4d-391e-49d4-9b3a-01ee6c8ea097}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\Integrations\PureJava">
+      <UniqueIdentifier>{1d952908-4011-4338-aed4-cab6524e3bad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\Integrations\Unity">
+      <UniqueIdentifier>{5797b963-6b9d-4137-be94-8a7db4a24cd1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\LibOVR">
+      <UniqueIdentifier>{1ced138f-3803-4257-9800-ecefd3873de3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\LibOVR\Include">
+      <UniqueIdentifier>{17785c41-0e3d-4d78-a393-dc3a535458d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\LibOVR\Src">
+      <UniqueIdentifier>{adfa0281-4b37-4bd0-a765-53be330a8f33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\LibOVR\Src\CAPI">
+      <UniqueIdentifier>{485fdf86-3764-409d-9ece-fcd6da26ebd9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\LibOVR\Src\Kernel">
+      <UniqueIdentifier>{c9c71b27-caba-4d94-ae73-fe7ded0900b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\LibOVR\Src\Util">
+      <UniqueIdentifier>{fd34179d-aaf9-45dc-b54b-88fe2e986eb1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\RayTracer">
+      <UniqueIdentifier>{f68347c5-435a-44f2-a6dd-20d6e70aa706}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\VrApi">
+      <UniqueIdentifier>{f08d4095-1e70-4d7f-b9be-2f33e675361e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\VRMenu">
+      <UniqueIdentifier>{3185d472-7fdb-4e45-9a7c-36793372e6a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Java Source Files">
+      <UniqueIdentifier>{1baa700a-2ba6-4248-8ec7-c2213cdbe754}</UniqueIdentifier>
+      <Extensions>*.java</Extensions>
+    </Filter>
+    <Filter Include="Java Source Files\android">
+      <UniqueIdentifier>{c30b7f54-b100-4f8c-b9b3-cb6a6d8c32f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Java Source Files\android\app">
+      <UniqueIdentifier>{26128411-1aa3-4c43-8f4e-7ce44127f478}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Java Source Files\com">
+      <UniqueIdentifier>{7c2b6133-14f9-402e-b8f1-518b91dabee6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Java Source Files\com\oculusvr">
+      <UniqueIdentifier>{50e5e319-fd0d-48fb-bda8-2b5350099fbe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Java Source Files\com\oculusvr\vrlib">
+      <UniqueIdentifier>{cc1776fc-3a52-4fc5-ad64-630ce8e0e06e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Java Source Files\com\oculusvr\vrlib\util">
+      <UniqueIdentifier>{c81472e4-7c13-44b5-ae6f-fd5981504126}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="AndroidManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="jni\Android.mk" />
+    <None Include="jni\Application.mk" />
+    <None Include="jni\3rdParty\minizip\configure.ac">
+      <Filter>Source files\3rdParty\minizip</Filter>
+    </None>
+    <None Include="jni\3rdParty\minizip\Makefile">
+      <Filter>Source files\3rdParty\minizip</Filter>
+    </None>
+    <None Include="jni\3rdParty\minizip\Makefile.am">
+      <Filter>Source files\3rdParty\minizip</Filter>
+    </None>
+    <None Include="jni\3rdParty\minizip\make_vms.com">
+      <Filter>Source files\3rdParty\minizip</Filter>
+    </None>
+    <None Include="jni\3rdParty\minizip\minizip.pc.in">
+      <Filter>Source files\3rdParty\minizip</Filter>
+    </None>
+    <None Include="src\android\app\IVRManager.java">
+      <Filter>Java Source Files\android\app</Filter>
+    </None>
+    <None Include="src\com\oculusvr\vrlib\FlatActivity.java">
+      <Filter>Java Source Files\com\oculusvr\vrlib</Filter>
+    </None>
+    <None Include="src\com\oculusvr\vrlib\JoyEvent.java">
+      <Filter>Java Source Files\com\oculusvr\vrlib</Filter>
+    </None>
+    <None Include="src\com\oculusvr\vrlib\PassThroughCamera.java">
+      <Filter>Java Source Files\com\oculusvr\vrlib</Filter>
+    </None>
+    <None Include="src\com\oculusvr\vrlib\PlatformActivity.java">
+      <Filter>Java Source Files\com\oculusvr\vrlib</Filter>
+    </None>
+    <None Include="src\com\oculusvr\vrlib\VrActivity.java">
+      <Filter>Java Source Files\com\oculusvr\vrlib</Filter>
+    </None>
+    <None Include="src\com\oculusvr\vrlib\VrApplication.java">
+      <Filter>Java Source Files\com\oculusvr\vrlib</Filter>
+    </None>
+    <None Include="src\com\oculusvr\vrlib\VrLib.java">
+      <Filter>Java Source Files\com\oculusvr\vrlib</Filter>
+    </None>
+    <None Include="src\com\oculusvr\vrlib\util\LayoutEnumerator.java">
+      <Filter>Java Source Files\com\oculusvr\vrlib\util</Filter>
+    </None>
+    <None Include="src\com\oculusvr\vrlib\util\ViewFinder.java">
+      <Filter>Java Source Files\com\oculusvr\vrlib\util</Filter>
+    </None>
+    <None Include="src\com\oculusvr\vrlib\util\VRTouchPadGestureDetector.java">
+      <Filter>Java Source Files\com\oculusvr\vrlib\util</Filter>
+    </None>
+    <None Include="src\com\oculusvr\vrlib\ProximityReceiver.java">
+      <Filter>Java Source Files\com\oculusvr\vrlib</Filter>
+    </None>
+    <None Include="src\com\oculusvr\vrlib\DockReceiver.java">
+      <Filter>Java Source Files\com\oculusvr\vrlib</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="jni\App.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\AppRender.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\BitmapFont.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\DebugLines.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\EyeBuffers.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\EyePostRender.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\GazeCursor.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\GlGeometry.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\GlProgram.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\GlTexture.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\GlUtils.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\ImageData.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\KeyState.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\MemBuffer.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\MessageQueue.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\ModelCollision.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\ModelFile.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\ModelRender.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\ModelView.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\PlatformActivity.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\SurfaceTexture.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\SwipeView.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\TalkToJava.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\VrCommon.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\3rdParty\minizip\ioapi.c">
+      <Filter>Source files\3rdParty\minizip</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\3rdParty\minizip\iowin32.c">
+      <Filter>Source files\3rdParty\minizip</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\3rdParty\minizip\miniunz.c">
+      <Filter>Source files\3rdParty\minizip</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\3rdParty\minizip\minizip.c">
+      <Filter>Source files\3rdParty\minizip</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\3rdParty\minizip\mztools.c">
+      <Filter>Source files\3rdParty\minizip</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\3rdParty\minizip\unzip.c">
+      <Filter>Source files\3rdParty\minizip</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\3rdParty\minizip\zip.c">
+      <Filter>Source files\3rdParty\minizip</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\3rdParty\stb\stb_image.c">
+      <Filter>Source files\3rdParty\stb</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\3rdParty\stb\stb_image_write.c">
+      <Filter>Source files\3rdParty\stb</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\Integrations\PureJava\PureJava.cpp">
+      <Filter>Source files\Integrations\PureJava</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\Integrations\Unity\MediaSurface.cpp">
+      <Filter>Source files\Integrations\Unity</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\Integrations\Unity\RenderingPlugin.cpp">
+      <Filter>Source files\Integrations\Unity</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\Integrations\Unity\SensorPlugin.cpp">
+      <Filter>Source files\Integrations\Unity</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\Integrations\Unity\UnityPlugin.cpp">
+      <Filter>Source files\Integrations\Unity</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\LibOVR\Src\OVR_Android_DeviceManager.cpp">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\LibOVR\Src\OVR_Android_HIDDevice.cpp">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\LibOVR\Src\OVR_Android_HMDDevice.cpp">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\LibOVR\Src\OVR_Android_PhoneSensors.cpp">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\LibOVR\Src\OVR_Android_SensorDevice.cpp">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\LibOVR\Src\OVR_BinaryFile.cpp">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\LibOVR\Src\OVR_CAPI.cpp">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\LibOVR\Src\OVR_Common_HMDDevice.cpp">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\LibOVR\Src\OVR_DeviceHandle.cpp">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\LibOVR\Src\OVR_DeviceImpl.cpp">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\LibOVR\Src\OVR_GyroTempCalibration.cpp">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\LibOVR\Src\OVR_JSON.cpp">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\LibOVR\Src\OVR_LatencyTestImpl.cpp">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\LibOVR\Src\OVR_Linux_DeviceManager.cpp">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\LibOVR\Src\OVR_Linux_HIDDevice.cpp">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\LibOVR\Src\OVR_Linux_HMDDevice.cpp">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\LibOVR\Src\OVR_Linux_SensorDevice.cpp">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\LibOVR\Src\OVR_MappedFile.cpp">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\LibOVR\Src\OVR_OSX_DeviceManager.cpp">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\LibOVR\Src\OVR_OSX_HIDDevice.cpp">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\LibOVR\Src\OVR_OSX_HMDDevice.cpp">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\LibOVR\Src\OVR_OSX_SensorDevice.cpp">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\LibOVR\Src\OVR_Profile.cpp">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\LibOVR\Src\OVR_SensorCalibration.cpp">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\LibOVR\Src\OVR_SensorFilter.cpp">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\LibOVR\Src\OVR_SensorFusion.cpp">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\LibOVR\Src\OVR_SensorImpl.cpp">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\LibOVR\Src\OVR_SensorTimeFilter.cpp">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\LibOVR\Src\OVR_Stereo.cpp">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\LibOVR\Src\OVR_ThreadCommandQueue.cpp">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\LibOVR\Src\OVR_Win32_DeviceManager.cpp">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\LibOVR\Src\OVR_Win32_DeviceStatus.cpp">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\LibOVR\Src\OVR_Win32_HIDDevice.cpp">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\LibOVR\Src\OVR_Win32_HMDDevice.cpp">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\LibOVR\Src\OVR_Win32_SensorDevice.cpp">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\LibOVR\Src\CAPI\CAPI_GlobalState.cpp">
+      <Filter>Source files\LibOVR\Src\CAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\LibOVR\Src\CAPI\CAPI_HMDState.cpp">
+      <Filter>Source files\LibOVR\Src\CAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\LibOVR\Src\Kernel\OVR_Alg.cpp">
+      <Filter>Source files\LibOVR\Src\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\LibOVR\Src\Kernel\OVR_Allocator.cpp">
+      <Filter>Source files\LibOVR\Src\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\LibOVR\Src\Kernel\OVR_Atomic.cpp">
+      <Filter>Source files\LibOVR\Src\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\LibOVR\Src\Kernel\OVR_File.cpp">
+      <Filter>Source files\LibOVR\Src\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\LibOVR\Src\Kernel\OVR_FileFILE.cpp">
+      <Filter>Source files\LibOVR\Src\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\LibOVR\Src\Kernel\OVR_Lockless.cpp">
+      <Filter>Source files\LibOVR\Src\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\LibOVR\Src\Kernel\OVR_Log.cpp">
+      <Filter>Source files\LibOVR\Src\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\LibOVR\Src\Kernel\OVR_Math.cpp">
+      <Filter>Source files\LibOVR\Src\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\LibOVR\Src\Kernel\OVR_RefCount.cpp">
+      <Filter>Source files\LibOVR\Src\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\LibOVR\Src\Kernel\OVR_Std.cpp">
+      <Filter>Source files\LibOVR\Src\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\LibOVR\Src\Kernel\OVR_String.cpp">
+      <Filter>Source files\LibOVR\Src\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\LibOVR\Src\Kernel\OVR_String_FormatUtil.cpp">
+      <Filter>Source files\LibOVR\Src\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\LibOVR\Src\Kernel\OVR_String_PathUtil.cpp">
+      <Filter>Source files\LibOVR\Src\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\LibOVR\Src\Kernel\OVR_SysFile.cpp">
+      <Filter>Source files\LibOVR\Src\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\LibOVR\Src\Kernel\OVR_System.cpp">
+      <Filter>Source files\LibOVR\Src\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\LibOVR\Src\Kernel\OVR_ThreadsPthread.cpp">
+      <Filter>Source files\LibOVR\Src\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\LibOVR\Src\Kernel\OVR_ThreadsWinAPI.cpp">
+      <Filter>Source files\LibOVR\Src\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\LibOVR\Src\Kernel\OVR_Timer.cpp">
+      <Filter>Source files\LibOVR\Src\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\LibOVR\Src\Kernel\OVR_TypesafeNumber.cpp">
+      <Filter>Source files\LibOVR\Src\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\LibOVR\Src\Kernel\OVR_UTF8Util.cpp">
+      <Filter>Source files\LibOVR\Src\Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\LibOVR\Src\Util\Util_LatencyTest.cpp">
+      <Filter>Source files\LibOVR\Src\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\RayTracer\RtIntersect.cpp">
+      <Filter>Source files\RayTracer</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\RayTracer\RtTrace.cpp">
+      <Filter>Source files\RayTracer</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\VrApi\DirectRender.cpp">
+      <Filter>Source files\VrApi</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\VrApi\HmdInfo.cpp">
+      <Filter>Source files\VrApi</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\VrApi\ImageServer.cpp">
+      <Filter>Source files\VrApi</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\VrApi\LocalPreferences.cpp">
+      <Filter>Source files\VrApi</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\VrApi\NativeBuildStrings.cpp">
+      <Filter>Source files\VrApi</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\VrApi\TimeWarp.cpp">
+      <Filter>Source files\VrApi</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\VrApi\VrApi.cpp">
+      <Filter>Source files\VrApi</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\VrApi\Vsync.cpp">
+      <Filter>Source files\VrApi</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\VRMenu\DefaultComponent.cpp">
+      <Filter>Source files\VRMenu</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\VRMenu\Fader.cpp">
+      <Filter>Source files\VRMenu</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\VRMenu\FolderBrowser.cpp">
+      <Filter>Source files\VRMenu</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\VRMenu\GuiSys.cpp">
+      <Filter>Source files\VRMenu</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\VRMenu\SoundLimiter.cpp">
+      <Filter>Source files\VRMenu</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\VRMenu\VRMenu.cpp">
+      <Filter>Source files\VRMenu</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\VRMenu\VRMenuComponent.cpp">
+      <Filter>Source files\VRMenu</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\VRMenu\VRMenuEvent.cpp">
+      <Filter>Source files\VRMenu</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\VRMenu\VRMenuEventHandler.cpp">
+      <Filter>Source files\VRMenu</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\VRMenu\VRMenuMgr.cpp">
+      <Filter>Source files\VRMenu</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\VRMenu\VRMenuObjectLocal.cpp">
+      <Filter>Source files\VRMenu</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\VRMenu\GlobalMenu.cpp">
+      <Filter>Source files\VRMenu</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\VRMenu\TextFade_Component.cpp">
+      <Filter>Source files\VRMenu</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\SwipeDir.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\SearchPaths.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\VRMenu\CollisionPrimitive.cpp">
+      <Filter>Source files\VRMenu</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\VRMenu\ActionComponents.cpp">
+      <Filter>Source files\VRMenu</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\VRMenu\VolumePopup.cpp">
+      <Filter>Source files\VRMenu</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\PackageFiles.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\VRMenu\AnimComponents.cpp">
+      <Filter>Source files\VRMenu</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\VRMenu\SliderComponent.cpp">
+      <Filter>Source files\VRMenu</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\Log.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="jni\SoundManager.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="jni\3rdParty\minizip\MiniZip64_Changes.txt">
+      <Filter>Source files\3rdParty\minizip</Filter>
+    </Text>
+    <Text Include="jni\3rdParty\minizip\MiniZip64_info.txt">
+      <Filter>Source files\3rdParty\minizip</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="jni\App.h">
+      <Filter>Source files</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\AppLocal.h">
+      <Filter>Source files</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\BitmapFont.h">
+      <Filter>Source files</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\DebugLines.h">
+      <Filter>Source files</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\EyeBuffers.h">
+      <Filter>Source files</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\EyePostRender.h">
+      <Filter>Source files</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\GazeCursor.h">
+      <Filter>Source files</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\GazeCursorLocal.h">
+      <Filter>Source files</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\GlGeometry.h">
+      <Filter>Source files</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\GlProgram.h">
+      <Filter>Source files</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\GlTexture.h">
+      <Filter>Source files</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\GlUtils.h">
+      <Filter>Source files</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\ImageData.h">
+      <Filter>Source files</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\Input.h">
+      <Filter>Source files</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\KeyState.h">
+      <Filter>Source files</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\Log.h">
+      <Filter>Source files</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\MemBuffer.h">
+      <Filter>Source files</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\MessageQueue.h">
+      <Filter>Source files</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\ModelCollision.h">
+      <Filter>Source files</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\ModelFile.h">
+      <Filter>Source files</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\ModelRender.h">
+      <Filter>Source files</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\ModelView.h">
+      <Filter>Source files</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\SurfaceTexture.h">
+      <Filter>Source files</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\SwipeView.h">
+      <Filter>Source files</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\TalkToJava.h">
+      <Filter>Source files</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\VrCommon.h">
+      <Filter>Source files</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\VRMenu\DefaultComponent.h">
+      <Filter>Source files\VRMenu</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\VRMenu\Fader.h">
+      <Filter>Source files\VRMenu</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\VRMenu\FolderBrowser.h">
+      <Filter>Source files\VRMenu</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\VRMenu\GlobalMenu.h">
+      <Filter>Source files\VRMenu</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\VRMenu\GuiSys.h">
+      <Filter>Source files\VRMenu</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\VRMenu\GuiSysLocal.h">
+      <Filter>Source files\VRMenu</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\VRMenu\SoundLimiter.h">
+      <Filter>Source files\VRMenu</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\VRMenu\ui_default.h">
+      <Filter>Source files\VRMenu</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\VRMenu\VRMenu.h">
+      <Filter>Source files\VRMenu</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\VRMenu\VRMenuComponent.h">
+      <Filter>Source files\VRMenu</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\VRMenu\VRMenuEvent.h">
+      <Filter>Source files\VRMenu</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\VRMenu\VRMenuEventHandler.h">
+      <Filter>Source files\VRMenu</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\VRMenu\VRMenuMgr.h">
+      <Filter>Source files\VRMenu</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\VRMenu\VRMenuObject.h">
+      <Filter>Source files\VRMenu</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\VRMenu\VRMenuObjectLocal.h">
+      <Filter>Source files\VRMenu</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\VrApi\DirectRender.h">
+      <Filter>Source files\VrApi</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\VrApi\HmdInfo.h">
+      <Filter>Source files\VrApi</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\VrApi\ImageServer.h">
+      <Filter>Source files\VrApi</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\VrApi\LocalPreferences.h">
+      <Filter>Source files\VrApi</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\VrApi\NativeBuildStrings.h">
+      <Filter>Source files\VrApi</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\VrApi\TimeWarp.h">
+      <Filter>Source files\VrApi</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\VrApi\TimeWarpLocal.h">
+      <Filter>Source files\VrApi</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\VrApi\TimeWarpParms.h">
+      <Filter>Source files\VrApi</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\VrApi\VrApi.h">
+      <Filter>Source files\VrApi</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\VrApi\VrApi_local.h">
+      <Filter>Source files\VrApi</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\VrApi\Vsync.h">
+      <Filter>Source files\VrApi</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\RayTracer\RtIntersect.h">
+      <Filter>Source files\RayTracer</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\RayTracer\RtTrace.h">
+      <Filter>Source files\RayTracer</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Include\OVR.h">
+      <Filter>Source files\LibOVR\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Include\OVRVersion.h">
+      <Filter>Source files\LibOVR\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\OVR_Android_DeviceManager.h">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\OVR_Android_HIDDevice.h">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\OVR_Android_HMDDevice.h">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\OVR_Android_PhoneSensors.h">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\OVR_BinaryFile.h">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\OVR_CAPI.h">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\OVR_Device.h">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\OVR_DeviceConstants.h">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\OVR_DeviceHandle.h">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\OVR_DeviceImpl.h">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\OVR_DeviceMessages.h">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\OVR_GyroTempCalibration.h">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\OVR_HIDDevice.h">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\OVR_HIDDeviceBase.h">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\OVR_HIDDeviceImpl.h">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\OVR_JSON.h">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\OVR_LatencyTestImpl.h">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\OVR_Linux_DeviceManager.h">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\OVR_Linux_HIDDevice.h">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\OVR_Linux_HMDDevice.h">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\OVR_MappedFile.h">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\OVR_OSX_DeviceManager.h">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\OVR_OSX_HIDDevice.h">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\OVR_OSX_HMDDevice.h">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\OVR_PhoneSensors.h">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\OVR_Profile.h">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\OVR_SensorCalibration.h">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\OVR_SensorFilter.h">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\OVR_SensorFusion.h">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\OVR_SensorImpl.h">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\OVR_SensorTimeFilter.h">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\OVR_Stereo.h">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\OVR_ThreadCommandQueue.h">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\OVR_Win32_DeviceManager.h">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\OVR_Win32_DeviceStatus.h">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\OVR_Win32_HIDDevice.h">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\OVR_Win32_HMDDevice.h">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\OVR_Win32_SensorDevice.h">
+      <Filter>Source files\LibOVR\Src</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\CAPI\CAPI_GlobalState.h">
+      <Filter>Source files\LibOVR\Src\CAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\CAPI\CAPI_HMDState.h">
+      <Filter>Source files\LibOVR\Src\CAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\Kernel\OVR_Alg.h">
+      <Filter>Source files\LibOVR\Src\Kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\Kernel\OVR_Allocator.h">
+      <Filter>Source files\LibOVR\Src\Kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\Kernel\OVR_Array.h">
+      <Filter>Source files\LibOVR\Src\Kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\Kernel\OVR_Atomic.h">
+      <Filter>Source files\LibOVR\Src\Kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\Kernel\OVR_BitFlags.h">
+      <Filter>Source files\LibOVR\Src\Kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\Kernel\OVR_Color.h">
+      <Filter>Source files\LibOVR\Src\Kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\Kernel\OVR_ContainerAllocator.h">
+      <Filter>Source files\LibOVR\Src\Kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\Kernel\OVR_Deque.h">
+      <Filter>Source files\LibOVR\Src\Kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\Kernel\OVR_File.h">
+      <Filter>Source files\LibOVR\Src\Kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\Kernel\OVR_Hash.h">
+      <Filter>Source files\LibOVR\Src\Kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\Kernel\OVR_KeyCodes.h">
+      <Filter>Source files\LibOVR\Src\Kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\Kernel\OVR_List.h">
+      <Filter>Source files\LibOVR\Src\Kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\Kernel\OVR_Lockless.h">
+      <Filter>Source files\LibOVR\Src\Kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\Kernel\OVR_Log.h">
+      <Filter>Source files\LibOVR\Src\Kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\Kernel\OVR_Math.h">
+      <Filter>Source files\LibOVR\Src\Kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\Kernel\OVR_RefCount.h">
+      <Filter>Source files\LibOVR\Src\Kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\Kernel\OVR_Std.h">
+      <Filter>Source files\LibOVR\Src\Kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\Kernel\OVR_String.h">
+      <Filter>Source files\LibOVR\Src\Kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\Kernel\OVR_String_Utils.h">
+      <Filter>Source files\LibOVR\Src\Kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\Kernel\OVR_StringHash.h">
+      <Filter>Source files\LibOVR\Src\Kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\Kernel\OVR_SysFile.h">
+      <Filter>Source files\LibOVR\Src\Kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\Kernel\OVR_System.h">
+      <Filter>Source files\LibOVR\Src\Kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\Kernel\OVR_Threads.h">
+      <Filter>Source files\LibOVR\Src\Kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\Kernel\OVR_Timer.h">
+      <Filter>Source files\LibOVR\Src\Kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\Kernel\OVR_Types.h">
+      <Filter>Source files\LibOVR\Src\Kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\Kernel\OVR_TypesafeNumber.h">
+      <Filter>Source files\LibOVR\Src\Kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\Kernel\OVR_UTF8Util.h">
+      <Filter>Source files\LibOVR\Src\Kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\LibOVR\Src\Util\Util_LatencyTest.h">
+      <Filter>Source files\LibOVR\Src\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\Integrations\JavaVM.h">
+      <Filter>Source files\Integrations</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\Integrations\Unity\GlStateSave.h">
+      <Filter>Source files\Integrations\Unity</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\Integrations\Unity\MediaSurface.h">
+      <Filter>Source files\Integrations\Unity</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\3rdParty\minizip\crypt.h">
+      <Filter>Source files\3rdParty\minizip</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\3rdParty\minizip\ioapi.h">
+      <Filter>Source files\3rdParty\minizip</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\3rdParty\minizip\iowin32.h">
+      <Filter>Source files\3rdParty\minizip</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\3rdParty\minizip\mztools.h">
+      <Filter>Source files\3rdParty\minizip</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\3rdParty\minizip\unzip.h">
+      <Filter>Source files\3rdParty\minizip</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\3rdParty\minizip\zip.h">
+      <Filter>Source files\3rdParty\minizip</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\3rdParty\stb\stb_image.h">
+      <Filter>Source files\3rdParty\stb</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\3rdParty\stb\stb_image_write.h">
+      <Filter>Source files\3rdParty\stb</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\VRMenu\TextFade_Component.h">
+      <Filter>Source files\VRMenu</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\SwipeDir.h">
+      <Filter>Source files</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\SearchPaths.h">
+      <Filter>Source files</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\VRMenu\CollisionPrimitive.h">
+      <Filter>Source files\VRMenu</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\VRMenu\ActionComponents.h">
+      <Filter>Source files\VRMenu</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\VRMenu\VolumePopup.h">
+      <Filter>Source files\VRMenu</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\VRMenu\AnimComponents.h">
+      <Filter>Source files\VRMenu</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\PackageFiles.h">
+      <Filter>Source files</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\VRMenu\SliderComponent.h">
+      <Filter>Source files</Filter>
+    </ClInclude>
+    <ClInclude Include="jni\SoundManager.h" />
+    <ClInclude Include="jni\embedded\oculus_jpg.h">
+      <Filter>Source files\embedded</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
