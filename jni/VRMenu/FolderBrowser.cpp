@@ -1705,8 +1705,9 @@ void OvrFolderBrowser::BuildMenu()
 
 		for ( int i = 0; i < numIndicatorChildren; ++i )
 		{
+			const Vector3f pos = ( DOWN * iconSpacing * i ) + ( FWD * i * 0.01f );
 			VRMenuObjectParms swipeDownFrame( VRMENU_STATIC, Array< VRMenuComponent* >(), downIndicatorSurfaceParms, "",
-				Posef( Quatf(), DOWN * iconSpacing * i ), Vector3f( 1.0f ), Posef(), Vector3f( 1.0f ), fontParms, VRMenuId_t(),
+				Posef( Quatf(), pos ), Vector3f( 1.0f ), Posef(), Vector3f( 1.0f ), fontParms, VRMenuId_t(),
 				VRMenuObjectFlags_t(), VRMenuObjectInitFlags_t( VRMENUOBJECT_INIT_FORCE_POSITION ) );
 			parms.PushBack( &swipeDownFrame );
 			AddItems( MenuMgr, Font, parms, ScrollHintHandle, false );
@@ -2109,17 +2110,17 @@ void OvrFolderBrowser::LoadThumbnailToTexture( const char * thumbnailCommand )
 	panel->Size[ 0 ] *= ( float )width / max;
 	panel->Size[ 1 ] *= ( float )height / max;
 
-	panel->Texture = LoadRGBATextureFromMemory(
+	GLuint texId = LoadRGBATextureFromMemory(
 		data, width, height, true /* srgb */ ).texture;
 
-	OVR_ASSERT( panel->Texture );
+	OVR_ASSERT( texId );
 
-	panelObject->SetSurfaceTexture( 0, 0, SURFACE_TEXTURE_DIFFUSE,
-		panel->Texture, panel->Size[ 0 ], panel->Size[ 1 ] );
+	panelObject->SetSurfaceTextureTakeOwnership( 0, 0, SURFACE_TEXTURE_DIFFUSE,
+		texId, panel->Size[ 0 ], panel->Size[ 1 ] );
 
-	BuildTextureMipmaps( panel->Texture );
-	MakeTextureTrilinear( panel->Texture );
-	MakeTextureClamped( panel->Texture );
+	BuildTextureMipmaps( texId );
+	MakeTextureTrilinear( texId );
+	MakeTextureClamped( texId );
 
 	free( data );
 }
@@ -2155,7 +2156,6 @@ void OvrFolderBrowser::AddPanelToFolder( OvrMetaDatum * const panoData, const in
 	panel.Id = panelIndex;
 	panel.Size.x = PanelWidth;
 	panel.Size.y = PanelHeight;
-	panel.Texture = DefaultFileTexture;
 
 	String panelTitle = panoData->Title;
 

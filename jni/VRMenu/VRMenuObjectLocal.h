@@ -34,6 +34,7 @@ public:
 	bool	LoadTexture( eSurfaceTextureType const type, char const * imageName, bool const allowDefault );
 	void 	LoadTexture( eSurfaceTextureType const type, const GLuint texId, const int width, const int height );
 	void	Free();
+	void	SetOwnership( const bool isOwner )	{ OwnsTexture = isOwner; }
 
 	GLuint				GetHandle() const { return Handle; }
 	int					GetWidth() const { return Width; }
@@ -119,6 +120,7 @@ public:
 	Vector2f						GetAnchorOffsets() const;
 
 	VRMenuSurfaceTexture const &	GetTexture( int const index )  const { return Textures[index]; }
+	void							SetOwnership( int const index, bool const isOwner );
 	
 	bool							GetVisible() const { return Visible; }
 	void							SetVisible( bool const v ) { Visible = v; }
@@ -285,6 +287,10 @@ public:
     virtual void                SetSurfaceTexture( int const surfaceIndex, int const textureIndex, 
                                         eSurfaceTextureType const type, GLuint const texId, 
                                         int const width, int const height );
+
+	virtual void                SetSurfaceTextureTakeOwnership( int const surfaceIndex, int const textureIndex,
+										eSurfaceTextureType const type, GLuint const texId,
+										int const width, int const height );
 
 	//--------------------------------------------------------------
 	// collision

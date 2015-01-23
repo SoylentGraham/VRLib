@@ -34,6 +34,7 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.pm.PackageInfo;
+import android.os.Build;
 
 import java.lang.Class;
 import java.lang.reflect.Method;
@@ -711,18 +712,34 @@ public class VrLib implements android.view.Choreographer.FrameCallback {
 
 	public static OvrPhoneStateListener phoneListener = null; 
 	
-	public static void startCellularReceiver( Activity act ) {
+	public static void startCellularReceiver( final Activity act ) {
 		Log.d( TAG, "Registering OvrPhoneStateListener" );
-		final TelephonyManager phoneMgr = (TelephonyManager)act.getSystemService(Context.TELEPHONY_SERVICE);
-		if ( phoneListener == null ) {
-			phoneListener = new OvrPhoneStateListener();
-		}
-		phoneMgr.listen(phoneListener, PhoneStateListener.LISTEN_SERVICE_STATE | PhoneStateListener.LISTEN_SIGNAL_STRENGTHS);
+
+    	act.runOnUiThread( new Thread()
+    	{
+		 @Override
+    		public void run()
+    		{
+				final TelephonyManager phoneMgr = (TelephonyManager)act.getSystemService(Context.TELEPHONY_SERVICE);
+				if ( phoneListener == null ) {
+					phoneListener = new OvrPhoneStateListener();
+				}
+				phoneMgr.listen(phoneListener, PhoneStateListener.LISTEN_SERVICE_STATE | PhoneStateListener.LISTEN_SIGNAL_STRENGTHS);
+    		}
+    	});
 	}
-	public static void stopCellularReceiver( Activity act ) {
-		Log.d( TAG, "Unregistering OvrPhoneStateListener" ); 
-		final TelephonyManager phoneMgr = (TelephonyManager)act.getSystemService(Context.TELEPHONY_SERVICE);
-		phoneMgr.listen(phoneListener, PhoneStateListener.LISTEN_NONE);
+	public static void stopCellularReceiver( final Activity act ) {
+		Log.d( TAG, "Unregistering OvrPhoneStateListener" );
+
+    	act.runOnUiThread( new Thread()
+    	{
+		 @Override
+    		public void run()
+    		{
+				final TelephonyManager phoneMgr = (TelephonyManager)act.getSystemService(Context.TELEPHONY_SERVICE);
+				phoneMgr.listen(phoneListener, PhoneStateListener.LISTEN_NONE);
+    		}
+    	});
 	}
 
 	//==========================================================

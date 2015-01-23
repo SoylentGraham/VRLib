@@ -15,7 +15,7 @@ Copyright   :   Copyright 2014 Oculus VR, LLC. All Rights reserved.
 
 #define OVR_MAJOR_VERSION 0
 #define OVR_MINOR_VERSION 4
-#define OVR_BUILD_VERSION 0
+#define OVR_BUILD_VERSION 1
 #define OVR_REV_VERSION	  0
 #define OVR_VERSION_STRING		STRINGIZE_VALUE(OVR_MAJOR_VERSION)	\
 							"." STRINGIZE_VALUE(OVR_MINOR_VERSION)	\

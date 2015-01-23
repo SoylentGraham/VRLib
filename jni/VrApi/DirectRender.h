@@ -57,7 +57,7 @@ public:
 	// Queries all information from EGL so it will work inside Unity as well
 	// as our native code.
 	// Must be called by the same thread that will be rendering to the surfaces.
-	void	InitForCurrentSurface( JNIEnv * jni );
+	void	InitForCurrentSurface( JNIEnv * jni, int buildVersionSDK );
 
 	// Go back to a normal swapped window.
 	void	Shutdown();

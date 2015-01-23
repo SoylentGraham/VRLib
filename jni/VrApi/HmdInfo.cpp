@@ -34,8 +34,8 @@ enum hmdType_t
 {
 	HMD_GALAXY_OCULUS,	 // Galaxy S4 in J3 printed holder
 	HMD_S4_GALAXY,		 // Galaxy S4 in Samsung's holder
-	HMD_NOTE,
-	HMD_NOTE_4,          // Note4 prototype
+	HMD_NOTE,			 // Note3
+	HMD_NOTE_4,          // Note4
 	HMD_PM_GALAXY,       // Galaxy S5 1080 with lens version 1
 	HMD_QM_GALAXY,       // Galaxy S5 1080 with lens version 2
 	HMD_PM_GALAXY_WQHD,  // Galaxy S5 1440 with lens version 1
@@ -107,36 +107,37 @@ static hmdType_t IdentifyHmdType( const char *buildModel, const ovrSensorDesc & 
 	// model SM-N9000 is Mali Note 3
 	// model SM-N9005 is Adreno Note 3
 	// model SM-N910 is Note 4
+	// model SM-N916 is Korean Note 4
 	
-	if( ( strcmp( buildModel, "SM-G900F")  == 0 ) || ( strcmp( buildModel, "SM-G900X")  == 0 ) )
+	if ( ( strcmp( buildModel, "SM-G900F")  == 0 ) || ( strcmp( buildModel, "SM-G900X")  == 0 ) )
 	{
-		if (GetHmdVersion(sdesc.Version) == HMD_VERSION_PM)
+		if ( GetHmdVersion( sdesc.Version ) == HMD_VERSION_PM )
 		{
-			return HMD_PM_GALAXY;			
+			return HMD_PM_GALAXY;
 		}
 
 		return HMD_QM_GALAXY;
 	}
 
-	if( strcmp( buildModel, "GT-I9506")  == 0 )
+	if ( strcmp( buildModel, "GT-I9506" )  == 0 )
 	{
 		return HMD_S4_GALAXY;
 	}
 
-	if ( ( strcmp( buildModel, "SM-N900")  == 0 ) || ( strcmp( buildModel, "SM-N9005")  == 0 ) )
+	if ( ( strcmp( buildModel, "SM-N900" )  == 0 ) || ( strcmp( buildModel, "SM-N9005" )  == 0 ) )
 	{
 		return HMD_NOTE;
 	}
 
-	if( strstr( buildModel, "SM-N910")  != NULL )
+	if ( ( strstr( buildModel, "SM-N910" ) != NULL ) || ( strstr( buildModel, "SM-N916" ) != NULL ) )
 	{
 		return HMD_NOTE_4;
 	}
 
-	if ( strcmp( buildModel, "SM-G906S")  == 0 )
+	if ( strcmp( buildModel, "SM-G906S" )  == 0 )
 	{
 
-		if (GetHmdVersion(sdesc.Version) == HMD_VERSION_PM)
+		if ( GetHmdVersion( sdesc.Version ) == HMD_VERSION_PM )
 		{
 			return HMD_PM_GALAXY_WQHD;			
 		}
@@ -145,20 +146,16 @@ static hmdType_t IdentifyHmdType( const char *buildModel, const ovrSensorDesc & 
 	}
 
 	if ( sdesc.VendorId == Oculus_VendorId &&
-        sdesc.ProductId == Device_Tracker_ProductId)
+        sdesc.ProductId == Device_Tracker_ProductId )
 	{
 		return HMD_GALAXY_OCULUS;
 	}
 
-	if (GetHmdVersion(sdesc.Version) == HMD_VERSION_PM)
-	{
-		return HMD_PM_GALAXY;			
-	}
-
-	return HMD_QM_GALAXY;
+	LOG( "IdentifyHmdType: Model %s not found. Defaulting to Note4", buildModel );
+	return HMD_NOTE_4;
 }
 
-static hmdInfoInternal_t GetHmdInfo( hmdType_t hmdType )
+static hmdInfoInternal_t GetHmdInfo( const hmdType_t hmdType )
 {
 	hmdInfoInternal_t hmdInfo = {};
 

@@ -593,6 +593,10 @@ public:
                                         eSurfaceTextureType const type, GLuint const texId, 
                                         int const width, int const height ) = 0;
 
+	virtual void                SetSurfaceTextureTakeOwnership( int const surfaceIndex, int const textureIndex,
+										eSurfaceTextureType const type, GLuint const texId,
+										int const width, int const height ) = 0;
+
 	//--------------------------------------------------------------
 	// collision
 	//--------------------------------------------------------------

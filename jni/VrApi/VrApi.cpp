@@ -63,6 +63,8 @@ static bool hmtIsMounted = false;
 // the receiver is unregistered.
 static bool registerHMTReceivers = false;
 
+static int BuildVersionSDK = 19;	// default supported version for vrlib is KitKat 19
+
 ovrHmd	OvrHmd;
 
 enum eHMTDockState {
@@ -282,6 +284,21 @@ void ovr_OnLoad( JavaVM * JavaVm_ )
 
 	// After ovr_Initialize(), because it uses String
 	BuildStrings = new OVR::NativeBuildStrings( jni );
+
+	// Get the BuildVersion SDK
+	{
+		jclass versionClass = jni->FindClass( "android/os/Build$VERSION" );
+		if ( versionClass != 0 )
+		{
+			jfieldID sdkIntFieldID = jni->GetStaticFieldID( versionClass, "SDK_INT", "I" );
+			if ( sdkIntFieldID != 0 )
+			{
+				BuildVersionSDK = jni->GetStaticIntField( versionClass, sdkIntFieldID );
+				LOG( "BuildVersionSDK %d", BuildVersionSDK );
+			}
+			jni->DeleteLocalRef( versionClass );
+		}
+	}
 }
 
 void ovr_StartPackageActivity( ovrMobile * ovr, const char * className, const char * commandString )
@@ -658,6 +675,15 @@ static bool WriteFreq( const int freq, const char * pathFormat, ... )
 static void SetVrPlatformOptions( JNIEnv * VrJni, jclass vrActivityClass, jobject activityObject,
 		const int cpuLevel, const int gpuLevel )
 {
+	// Clear any previous exceptions.
+	// NOTE: This can be removed once security exception handling is moved to 
+	// Java IF.
+	if ( VrJni->ExceptionOccurred() )
+	{
+		VrJni->ExceptionClear();
+		LOG( "SetVrPlatformOptions: Enter: JNI Exception occurred" );
+	}
+
 	LOG( "SetVrPlatformOptions( %i, %i )", cpuLevel, gpuLevel );
 
 	// Get the available clock levels for the device.
@@ -666,6 +692,8 @@ static void SetVrPlatformOptions( JNIEnv * VrJni, jclass vrActivityClass, jobjec
 	jintArray jintLevels = (jintArray)VrJni->CallStaticObjectMethod( vrActivityClass,
 		getAvailableClockLevelsId, activityObject );
 
+	// TODO: Remove path to support old S5 binaries without fixed clock level api support,
+	// only minimum clock level support. Move security exception detection to the java IF.
 	// Catch Permission denied
 	if ( VrJni->ExceptionOccurred() )
 	{
@@ -927,11 +955,14 @@ ovrMobile * ovr_EnterVrMode( ovrModeParms parms, ovrHmdInfo * returnedHmdInfo )
 		LOG( "Operating without a sensor.");
 	}
 
-	// Let glUtils look up extensions
+	// Let GlUtils look up extensions
 	OVR::GL_FindExtensions();
 
 	// Make the current window into a front-buffer
-   	ovr->Screen.InitForCurrentSurface( ovr->Jni );
+	// NOTE: 2014-12-05 - Initial Android-L support requires
+	// different behavior than KitKat for setting up 
+	// front buffer rendering.
+   	ovr->Screen.InitForCurrentSurface( ovr->Jni, BuildVersionSDK );
 
 	// Based on sensor ID and platform, determine the HMD
 	UpdateHmdInfo( ovr );

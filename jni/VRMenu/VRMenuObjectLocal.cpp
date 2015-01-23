@@ -549,6 +549,11 @@ Vector2f VRMenuSurface::GetAnchorOffsets() const {
 					 ( Anchors.y - 0.5f ) * Dims.y * VRMenuObject::DEFAULT_TEXEL_SCALE ); 
 }
 
+void VRMenuSurface::SetOwnership( int const index, bool const isOwner )
+{
+	Textures[ index ].SetOwnership( isOwner );
+}
+
 //======================================================================================
 // VRMenuObjectLocal
 
@@ -1207,6 +1212,22 @@ void  VRMenuObjectLocal::SetSurfaceTexture( int const surfaceIndex, int const te
     }
     Surfaces[surfaceIndex].LoadTexture( textureIndex, type, texId, width, height );
 }
+
+//==============================
+// VRMenuObjectLocal::SetSurfaceTexture
+void  VRMenuObjectLocal::SetSurfaceTextureTakeOwnership( int const surfaceIndex, int const textureIndex,
+	eSurfaceTextureType const type, GLuint const texId,
+	int const width, int const height )
+{
+	if ( surfaceIndex < 0 || surfaceIndex >= Surfaces.GetSizeI() )
+	{
+		DROID_ASSERT( surfaceIndex >= 0 && surfaceIndex < Surfaces.GetSizeI(), "VrMenu" );
+		return;
+	}
+	Surfaces[ surfaceIndex ].LoadTexture( textureIndex, type, texId, width, height );
+	Surfaces[ surfaceIndex ].SetOwnership( textureIndex, true );
+}
+
 
 //==============================
 // VRMenuObjectLocal::SetLocalBoundsExpand

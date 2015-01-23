@@ -261,7 +261,7 @@ static void ExerciseFrontBuffer()
 	glDisable( GL_WRITEONLY_RENDERING_QCOM );
 }
 
-void DirectRender::InitForCurrentSurface( JNIEnv * jni )
+void DirectRender::InitForCurrentSurface( JNIEnv * jni, int buildVersionSDK_ )
 {
 	LOG( "%p DirectRender::InitForCurrentSurface", this );
 
@@ -271,9 +271,20 @@ void DirectRender::InitForCurrentSurface( JNIEnv * jni )
 	context = eglGetCurrentContext();
 	windowSurface = eglGetCurrentSurface( EGL_DRAW );
 
+	// NOTE: On Mali as well as under Android-L, we need to perform
+	// an initial swapbuffers in order for the front-buffer extension
+	// to work.
+	// TODO: In previous KitKat development binaries, applying the initial 
+	// swapbuffers on Adreno would result in poor performance. We should
+	// review if the issue still exists on the final production binary
+	// and if not, remove the check for KitKat and always perform the
+	// initial swapbuffers.
+	static const int KITKAT_WATCH = 20;
 	const GpuType gpuType = EglGetGpuType();
-	if ( ( gpuType & GPU_TYPE_MALI ) != 0 )  // work-around from Samsung for Mali front buffer extension
+	if ( ( buildVersionSDK_ > KITKAT_WATCH ) ||	// if the SDK is Lollipop or higher
+		 ( gpuType & GPU_TYPE_MALI ) != 0 )		// or the GPU is Mali
 	{
+		LOG( "Performing an initial swapbuffers for Mali and/or Android-L" );
 		eglSwapBuffers( display, windowSurface );	// swap buffer will operate que/deque related process internally
 													// now ready to set usage to proper surface
 	}

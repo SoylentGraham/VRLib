@@ -119,23 +119,12 @@ public:
 		Panel() 
 		: Data( NULL )
 		, Id( -1 )
-		, Texture( 0 ) 
 		{}
-
-		~Panel()
-		{
-			if ( Texture )
-			{
-				glDeleteTextures( 1, &Texture );
-				Texture = 0;
-			}
-		}
 
 		OvrMetaDatum *		 	Data;				// Datum in OvrMetaData - payload
 		menuHandle_t			Handle;				// Handle to the panel
 		int						Id;					// Unique id for thumbnail loading
 		Vector2f				Size;				// Thumbnail texture size
-		GLuint					Texture;			// Thumbnail texture
 	};
 
 	struct Folder
